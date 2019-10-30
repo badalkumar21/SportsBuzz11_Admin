@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "9318155039",
+    "firebase_url": "https://crickerdemo-f5ce7.firebaseio.com",
+    "project_id": "crickerdemo-f5ce7",
+    "storage_bucket": "crickerdemo-f5ce7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9318155039:android:52cf4f8873bc9b1b02262a",
+        "android_client_info": {
+          "package_name": "com.cricker.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9318155039-8i0dqau66grb0rfcu12gm5r819cnn3g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7sNRXbWiJeXbiLcSztuQJZKyCS6oY_hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9318155039-8i0dqau66grb0rfcu12gm5r819cnn3g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9318155039:android:b3f601accc1a0e2002262a",
+        "android_client_info": {
+          "package_name": "com.cricker.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9318155039-8i0dqau66grb0rfcu12gm5r819cnn3g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7sNRXbWiJeXbiLcSztuQJZKyCS6oY_hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9318155039-8i0dqau66grb0rfcu12gm5r819cnn3g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
