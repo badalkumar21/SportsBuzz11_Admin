@@ -4,6 +4,7 @@ public class MyModel {
 
     private String title;
     private String desc;
+    private String id;
     private String image1;
     private String image2;
     private String t1;
@@ -22,9 +23,10 @@ public class MyModel {
     }
 
 
-    public MyModel(String title, String desc, String image1, String image2, String t1, String t2, String team1, String team2, String status_r, String status_g, String url, String target, String ads) {
+    public MyModel(String title, String desc, String id, String image1, String image2, String t1, String t2, String team1, String team2, String status_r, String status_g, String url, String target, String ads) {
         this.title = title;
         this.desc = desc;
+        this.id = id;
         this.image1 = image1;
         this.image2 = image2;
         this.t1 = t1;
@@ -36,6 +38,14 @@ public class MyModel {
         this.url = url;
         this.target = target;
         this.ads = ads;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

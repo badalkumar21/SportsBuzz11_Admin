@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import static com.cricker.admin.Config.PATH;
+
 public class TipsFragment extends Fragment {
 
     public MatchDetailsActivity matchDetailsActivity;
@@ -37,13 +40,17 @@ public class TipsFragment extends Fragment {
     FloatingActionButton buttonAddTips;
     FloatingActionButton buttonDeleteTips;
     int childrenCount = 0;
-
+    private String id;
+    TextView textViewNoTips;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.fragment_tips, container, false);
 
         matchDetailsActivity = (MatchDetailsActivity) getActivity();
+
+        textViewNoTips = view.findViewById(R.id.no_tips_text);
+        id = matchDetailsActivity.id;
 
         buttonAddTips = view.findViewById(R.id.add_tips);
         buttonDeleteTips = view.findViewById(R.id.delete_tips);
@@ -53,7 +60,7 @@ public class TipsFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/tips");
+        mRef = mFirebaseDatabase.getReference(PATH +"FantasySquad/Team" + "/" + id + "/" + "tips");
         Query query = mRef.orderByKey();
 
         pb.setVisibility(View.VISIBLE);
@@ -90,6 +97,11 @@ public class TipsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 pb.setVisibility(View.GONE);
+                if (dataSnapshot.getChildrenCount() == 0) {
+                    textViewNoTips.setVisibility(View.VISIBLE);
+                } else {
+                    textViewNoTips.setVisibility(View.GONE);
+                }
             }
 
             @Override

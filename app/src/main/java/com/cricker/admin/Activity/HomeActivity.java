@@ -37,13 +37,16 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.cricker.admin.Adapter.ViewPagerAdapter;
 import com.cricker.admin.BuildConfig;
-import com.cricker.admin.Fragment.Tab5;
+import com.cricker.admin.Fragment.HomeFragment;
 import com.cricker.admin.R;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import static com.cricker.admin.Config.PATH;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -58,6 +61,7 @@ public class HomeActivity extends AppCompatActivity {
     private ValueAnimator valueAnimator;
     private DrawerLayout drawerLayout;
     private boolean isRunning;
+    private FloatingActionButton actionButtonAddMatch;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -82,6 +86,16 @@ public class HomeActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
+
+        actionButtonAddMatch = findViewById(R.id.add_match);
+
+        actionButtonAddMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent integer = new Intent(HomeActivity.this, AddMatchActivity.class);
+                startActivity(integer);
+            }
+        });
 
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
@@ -167,7 +181,7 @@ public class HomeActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager);
 
-        adapter.AddFragment(new Tab5(), "Cricket");
+        adapter.AddFragment(new HomeFragment(), "Cricket");
 //        adapter.AddFragment(new Tab6(), "Football");
 //        adapter.AddFragment(new Tab7(), "Kabaddi");
 //        adapter.AddFragment(new Tab8(), "NBA");
@@ -344,7 +358,8 @@ public class HomeActivity extends AppCompatActivity {
 
         Firebase.setAndroidContext(getApplicationContext());
 
-        myFirebase = new Firebase("https://crickerdemo-f5ce7.firebaseio.com/Version/currentVersion");
+        String url = "https://crickerdemo-f5ce7.firebaseio.com/" + PATH + "/Version/currentVersion";
+        myFirebase = new Firebase(url);
 
         myFirebase.addValueEventListener(new ValueEventListener() {
             @Override

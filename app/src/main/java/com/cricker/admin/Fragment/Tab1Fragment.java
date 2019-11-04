@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
+import static com.cricker.admin.Config.PATH;
+
 public class Tab1Fragment extends Fragment {
 
     public MatchDetailsActivity matchDetailsActivity;
@@ -52,7 +54,7 @@ public class Tab1Fragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference("Teams/" + team1);
+        mRef = mFirebaseDatabase.getReference(PATH +"Teams/" + team1);
         Query query = mRef.orderByKey();
 
         pb.setVisibility(View.VISIBLE);

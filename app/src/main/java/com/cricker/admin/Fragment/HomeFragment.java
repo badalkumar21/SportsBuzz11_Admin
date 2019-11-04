@@ -30,7 +30,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class Tab5 extends Fragment {
+import static com.cricker.admin.Config.PATH;
+
+public class HomeFragment extends Fragment {
 
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
@@ -51,7 +53,7 @@ public class Tab5 extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference("Cricket");
+        mRef = mFirebaseDatabase.getReference(PATH + "Cricket");
         Query query = mRef.orderByKey();
 
         pb.setVisibility(View.VISIBLE);
@@ -91,6 +93,7 @@ public class Tab5 extends Fragment {
                             Intent intent = new Intent(getActivity().getApplicationContext(), MatchDetailsActivity.class);
                             intent.putExtra("team1", model.getTeam1());
                             intent.putExtra("team2", model.getTeam2());
+                            intent.putExtra("id", model.getId());
                             startActivity(intent);
 
                         } else {

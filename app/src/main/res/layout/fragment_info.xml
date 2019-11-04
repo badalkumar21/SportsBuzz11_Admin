@@ -57,7 +57,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="2nd Test"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -86,7 +86,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="Oct 10 - Oct 14"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -115,7 +115,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="9 : 30 AM IST"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -144,7 +144,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="Sunny"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -194,7 +194,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="South Africa tour of India, 2019"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -222,7 +222,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="3 Tests, 3 T20s"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -251,7 +251,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="Sep 15-Oct 23"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -299,7 +299,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="Maharashtra Cricket Association Stadium"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -328,7 +328,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="Pune"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -357,7 +357,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="25000"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -405,7 +405,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="260"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -434,7 +434,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="105"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -463,7 +463,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="285"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 
@@ -493,7 +493,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="6"
                             android:gravity="start"
-                            android:text="107"
+                            android:text="N/A"
                             android:textSize="16sp"
                             android:textStyle="normal" />
 

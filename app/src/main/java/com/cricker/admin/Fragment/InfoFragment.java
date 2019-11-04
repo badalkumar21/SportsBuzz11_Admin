@@ -1,6 +1,7 @@
 package com.cricker.admin.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.cricker.admin.Activity.MatchDetailsActivity;
 import com.cricker.admin.Model.ModelInfo;
 import com.cricker.admin.R;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static com.cricker.admin.Config.PATH;
+
 public class InfoFragment extends Fragment {
 
 
@@ -27,6 +31,8 @@ public class InfoFragment extends Fragment {
     DatabaseReference mRef;
     ArrayList<ModelInfo> infoArrayList = new ArrayList<>();
 
+    public MatchDetailsActivity matchDetailsActivity;
+    private String id;
     private EditText text_avg_score_1st_inns;
     private EditText text_avg_score_2nd_inns;
     private EditText text_avg_score_3rd_inns;
@@ -48,6 +54,9 @@ public class InfoFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_info, container, false);
 
+        matchDetailsActivity = (MatchDetailsActivity) getActivity();
+        id = matchDetailsActivity.id;
+
         text_avg_score_1st_inns = view.findViewById(R.id.avg_score_1st_inns);
         text_avg_score_2nd_inns = view.findViewById(R.id.avg_score_2nd_inns);
         text_avg_score_3rd_inns = view.findViewById(R.id.avg_score_3rd_inns);
@@ -65,8 +74,9 @@ public class InfoFragment extends Fragment {
         buttonSave = view.findViewById(R.id.save_btn);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/info");
+        mRef = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/" + "info");
 
+        Log.d("admin__", "onCreateView: path " + PATH + " id : " + id);
 
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,6 +85,10 @@ public class InfoFragment extends Fragment {
 
                     infoArrayList.add(snapshot.getValue(ModelInfo.class));
 
+                }
+
+                if (infoArrayList.size() == 0) {
+                    return;
                 }
 
                 ModelInfo modelInfo = infoArrayList.get(0);

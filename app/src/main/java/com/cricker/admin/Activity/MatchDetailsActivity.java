@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MatchDetailsActivity extends AppCompatActivity {
 
+    public String id;
     public String team1;
     public String team2;
     private TabAdapter adapter;
@@ -29,6 +30,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
+        id = getIntent().getExtras().getString("id");
         team1 = getIntent().getExtras().getString("team1");
         team2 = getIntent().getExtras().getString("team2");
 

@@ -18,7 +18,7 @@ public class TeamConbinationActivity extends AppCompatActivity implements Number
     NumberPicker numberPickerBw;
 
     Button generateButton;
-    String team1, team2;
+    String team1, team2, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class TeamConbinationActivity extends AppCompatActivity implements Number
 
         generateButton = findViewById(R.id.generate_btn);
 
+        id = getIntent().getExtras().getString("id");
         team1 = getIntent().getExtras().getString("team1");
         team2 = getIntent().getExtras().getString("team2");
 
@@ -61,6 +62,7 @@ public class TeamConbinationActivity extends AppCompatActivity implements Number
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TeamConbinationActivity.this, TeamGeneratorActivity.class);
+                intent.putExtra("id", id);
                 intent.putExtra("team1", team1);
                 intent.putExtra("team2", team2);
                 intent.putExtra("wk", numberPickerWk.getValue());

@@ -26,10 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static com.cricker.admin.Config.PATH;
+
 public class TeamGeneratorActivity extends AppCompatActivity {
 
     public String team1;
     public String team2;
+    public String id;
 
     int points;
     int MAX_POINTS = 100;
@@ -81,16 +84,17 @@ public class TeamGeneratorActivity extends AppCompatActivity {
             }
         });
 
+        id = getIntent().getExtras().getString("id");
         team1 = getIntent().getExtras().getString("team1");
         team2 = getIntent().getExtras().getString("team2");
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference("Teams");
-        mRefWk = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/wk");
-        mRefBt = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/bt");
-        mRefAl = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/al");
-        mRefBw = mFirebaseDatabase.getReference("FantasySquad/Team/IndSa21/bw");
-        mRefXi = mFirebaseDatabase.getReference("FantasySquad/Team/FantasyXi");
+        mRef = mFirebaseDatabase.getReference(PATH + "Teams");
+        mRefWk = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/wk");
+        mRefBt = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/bt");
+        mRefAl = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/al");
+        mRefBw = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/bw");
+        mRefXi = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team/FantasyXi" + "/" + id);
 
         points = 0;
         mRefXi.setValue(null);

@@ -21,6 +21,14 @@
             app:tabIndicatorHeight="4dp"
             app:tabMode="fixed" />
 
+        <TextView
+            android:id="@+id/squad_type"
+            android:layout_width="match_parent"
+            android:text="Playing XI"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
