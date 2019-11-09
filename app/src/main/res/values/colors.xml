@@ -8,6 +8,7 @@
     <color name="colorGreen">#17c200</color>
     <color name="colorGray">#686868</color>
     <color name="colorOrange">#ff4000</color>
+    <color name="colorBlue">#0037FF</color>
 
 
     <item name="blue" type="color">#FF33B5E5</item>

@@ -12,6 +12,7 @@ public class ModelInfo {
     private String duration;
     private String match;
     private String series;
+    private String seriesDetails;
     private String time;
     private String venue;
     private String weather;
@@ -21,7 +22,7 @@ public class ModelInfo {
 
     }
 
-    public ModelInfo(long avg_score_1st_inns, long avg_score_2nd_inns, long avg_score_3rd_inns, long avg_score_4th_inns, long capacity, String city, String date, String duration, String match, String series, String time, String venue, String weather) {
+    public ModelInfo(long avg_score_1st_inns, long avg_score_2nd_inns, long avg_score_3rd_inns, long avg_score_4th_inns, long capacity, String city, String date, String duration, String match, String series, String seriesDetails, String time, String venue, String weather) {
         this.avg_score_1st_inns = avg_score_1st_inns;
         this.avg_score_2nd_inns = avg_score_2nd_inns;
         this.avg_score_3rd_inns = avg_score_3rd_inns;
@@ -32,9 +33,18 @@ public class ModelInfo {
         this.duration = duration;
         this.match = match;
         this.series = series;
+        this.seriesDetails = seriesDetails;
         this.time = time;
         this.venue = venue;
         this.weather = weather;
+    }
+
+    public String getSeriesDetails() {
+        return seriesDetails;
+    }
+
+    public void setSeriesDetails(String seriesDetails) {
+        this.seriesDetails = seriesDetails;
     }
 
     public long getAvg_score_1st_inns() {

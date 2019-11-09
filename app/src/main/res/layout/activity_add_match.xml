@@ -315,6 +315,21 @@
                     android:layout_margin="8dp">
 
                     <EditText
+                        android:id="@+id/edit_text_series_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Series Details" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <EditText
                         android:id="@+id/edit_text_time"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

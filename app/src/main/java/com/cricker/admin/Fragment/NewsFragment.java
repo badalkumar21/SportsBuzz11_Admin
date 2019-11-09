@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cricker.admin.Activity.MatchDetailsActivity;
-import com.cricker.admin.Model.ModelTips;
+import com.cricker.admin.Model.ModelNews;
 import com.cricker.admin.R;
-import com.cricker.admin.ViewHolder.ViewHolderTips;
+import com.cricker.admin.ViewHolder.ViewHolderNews;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,54 +29,54 @@ import com.google.firebase.database.ValueEventListener;
 
 import static com.cricker.admin.Config.PATH;
 
-public class TipsFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     public MatchDetailsActivity matchDetailsActivity;
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
     ProgressBar pb;
-    FirebaseRecyclerAdapter<ModelTips, ViewHolderTips> firebaseRecyclerAdapter;
-    FloatingActionButton buttonAddTips;
-    FloatingActionButton buttonDeleteTips;
+    FirebaseRecyclerAdapter<ModelNews, ViewHolderNews> firebaseRecyclerAdapter;
+    FloatingActionButton buttonAddNews;
+    FloatingActionButton buttonDeleteNews;
     int childrenCount = 0;
     private String id;
-    TextView textViewNoTips;
+    TextView textViewNoNews;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        final View view = inflater.inflate(R.layout.fragment_tips, container, false);
+        final View view = inflater.inflate(R.layout.fragment_news, container, false);
 
         matchDetailsActivity = (MatchDetailsActivity) getActivity();
 
-        textViewNoTips = view.findViewById(R.id.no_tips_text);
+        textViewNoNews = view.findViewById(R.id.no_news_text);
         id = matchDetailsActivity.id;
 
-        buttonAddTips = view.findViewById(R.id.add_tips);
-        buttonDeleteTips = view.findViewById(R.id.delete_tips);
-        pb = view.findViewById(R.id.pb_tips);
-        mRecyclerView = view.findViewById(R.id.myRecycleView_tips);
+        buttonAddNews = view.findViewById(R.id.add_news);
+        buttonDeleteNews = view.findViewById(R.id.delete_news);
+        pb = view.findViewById(R.id.pb_news);
+        mRecyclerView = view.findViewById(R.id.myRecycleView_news);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference(PATH +"FantasySquad/Team" + "/" + id + "/" + "tips");
+        mRef = mFirebaseDatabase.getReference(PATH +"FantasySquad/Team" + "/" + id + "/" + "news");
         Query query = mRef.orderByKey();
 
         pb.setVisibility(View.VISIBLE);
 
-        FirebaseRecyclerOptions fbOptions = new FirebaseRecyclerOptions.Builder<ModelTips>().setQuery(query, ModelTips.class).build();
+        FirebaseRecyclerOptions fbOptions = new FirebaseRecyclerOptions.Builder<ModelNews>().setQuery(query, ModelNews.class).build();
 
-        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ModelTips, ViewHolderTips>(fbOptions) {
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ModelNews, ViewHolderNews>(fbOptions) {
             @Override
-            protected void onBindViewHolder(final ViewHolderTips viewHolder, final int position, final ModelTips model) {
+            protected void onBindViewHolder(final ViewHolderNews viewHolder, final int position, final ModelNews model) {
 
-                viewHolder.setTips(model.getTips());
+                viewHolder.setNews(model.getNews());
 
                 viewHolder.buttonSave.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRef.child("" + (position + 1)).child("tips").setValue(viewHolder.editTextTips.getText().toString());
+                        mRef.child("" + (position + 1)).child("news").setValue(viewHolder.editTextNews.getText().toString());
                     }
                 });
 
@@ -85,11 +85,11 @@ public class TipsFragment extends Fragment {
             }
 
             @Override
-            public ViewHolderTips onCreateViewHolder(ViewGroup parent, int viewType) {
+            public ViewHolderNews onCreateViewHolder(ViewGroup parent, int viewType) {
 
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tips_row, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_row, parent, false);
 
-                return new ViewHolderTips(view);
+                return new ViewHolderNews(view);
             }
         };
 
@@ -98,9 +98,9 @@ public class TipsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 pb.setVisibility(View.GONE);
                 if (dataSnapshot.getChildrenCount() == 0) {
-                    textViewNoTips.setVisibility(View.VISIBLE);
+                    textViewNoNews.setVisibility(View.VISIBLE);
                 } else {
-                    textViewNoTips.setVisibility(View.GONE);
+                    textViewNoNews.setVisibility(View.GONE);
                 }
             }
 
@@ -125,17 +125,17 @@ public class TipsFragment extends Fragment {
 
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
 
-        buttonAddTips.setOnClickListener(new View.OnClickListener() {
+        buttonAddNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRef.child("" + (childrenCount + 1)).child("tips").setValue("   ");
+                mRef.child("" + (childrenCount + 1)).child("news").setValue("   ");
             }
         });
 
-        buttonDeleteTips.setOnClickListener(new View.OnClickListener() {
+        buttonDeleteNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRef.child("" + (childrenCount)).child("tips").setValue(null);
+                mRef.child("" + (childrenCount)).child("news").setValue(null);
             }
         });
 

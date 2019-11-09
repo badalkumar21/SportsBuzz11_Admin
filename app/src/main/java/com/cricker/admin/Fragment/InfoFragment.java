@@ -43,6 +43,7 @@ public class InfoFragment extends Fragment {
     private EditText text_duration;
     private EditText text_match;
     private EditText text_series;
+    private EditText text_seriesDetails;
     private EditText text_time;
     private EditText text_venue;
     private EditText text_weather;
@@ -67,6 +68,7 @@ public class InfoFragment extends Fragment {
         text_duration = view.findViewById(R.id.duration);
         text_match = view.findViewById(R.id.match);
         text_series = view.findViewById(R.id.series);
+        text_seriesDetails = view.findViewById(R.id.series_details);
         text_time = view.findViewById(R.id.time);
         text_venue = view.findViewById(R.id.venue);
         text_weather = view.findViewById(R.id.weather);
@@ -104,6 +106,7 @@ public class InfoFragment extends Fragment {
                     text_duration.setText(modelInfo.getDuration());
                     text_match.setText(modelInfo.getMatch());
                     text_series.setText(modelInfo.getSeries());
+                    text_seriesDetails.setText(modelInfo.getSeriesDetails());
                     text_time.setText(modelInfo.getTime());
                     text_venue.setText(modelInfo.getVenue());
                     text_weather.setText(modelInfo.getWeather());
@@ -129,6 +132,7 @@ public class InfoFragment extends Fragment {
                 mRef.child("1").child("duration").setValue(text_duration.getText().toString());
                 mRef.child("1").child("match").setValue(text_match.getText().toString());
                 mRef.child("1").child("series").setValue(text_series.getText().toString());
+                mRef.child("1").child("seriesDetails").setValue(text_seriesDetails.getText().toString());
                 mRef.child("1").child("time").setValue(text_time.getText().toString());
                 mRef.child("1").child("venue").setValue(text_venue.getText().toString());
                 mRef.child("1").child("weather").setValue(text_weather.getText().toString());

@@ -42,6 +42,7 @@ public class AddMatchActivity extends AppCompatActivity {
     private EditText text_duration;
     private EditText text_match;
     private EditText text_series;
+    private EditText text_series_details;
     private EditText text_time;
     private EditText text_venue;
     private EditText text_weather;
@@ -88,6 +89,7 @@ public class AddMatchActivity extends AppCompatActivity {
         text_duration = findViewById(R.id.edit_text_duration);
         text_match = findViewById(R.id.edit_text_match);
         text_series = findViewById(R.id.edit_text_series);
+        text_series_details = findViewById(R.id.edit_text_series_details);
         text_time = findViewById(R.id.edit_text_time);
         text_venue = findViewById(R.id.edit_text_venue);
         text_weather = findViewById(R.id.edit_text_weather);
@@ -143,6 +145,7 @@ public class AddMatchActivity extends AppCompatActivity {
                 mRefInfo.child("1").child("duration").setValue(text_duration.getText().toString());
                 mRefInfo.child("1").child("match").setValue(text_match.getText().toString());
                 mRefInfo.child("1").child("series").setValue(text_series.getText().toString());
+                mRefInfo.child("1").child("seriesDetails").setValue(text_series_details.getText().toString());
                 mRefInfo.child("1").child("time").setValue(text_time.getText().toString());
                 mRefInfo.child("1").child("venue").setValue(text_venue.getText().toString());
                 mRefInfo.child("1").child("weather").setValue(text_weather.getText().toString());
@@ -238,6 +241,7 @@ public class AddMatchActivity extends AppCompatActivity {
                             text_duration.setText(modelInfo.getDuration());
                             text_match.setText(modelInfo.getMatch());
                             text_series.setText(modelInfo.getSeries());
+                            text_series_details.setText(modelInfo.getSeriesDetails());
                             text_time.setText(modelInfo.getTime());
                             text_venue.setText(modelInfo.getVenue());
                             text_weather.setText(modelInfo.getWeather());

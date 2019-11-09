@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.cricker.admin.Adapter.TabAdapter;
 import com.cricker.admin.Fragment.InfoFragment;
+import com.cricker.admin.Fragment.NewsFragment;
 import com.cricker.admin.Fragment.SquadFragment;
 import com.cricker.admin.Fragment.TeamGeneratorFragment;
 import com.cricker.admin.Fragment.TipsFragment;
@@ -39,6 +40,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
         adapter.addFragment(new TeamGeneratorFragment(), "Teams");
         adapter.addFragment(new InfoFragment(), "Info");
         adapter.addFragment(new SquadFragment(), "Squad");
+        adapter.addFragment(new NewsFragment(), "News");
         adapter.addFragment(new TipsFragment(), "Tips");
 
         viewPager.setAdapter(adapter);

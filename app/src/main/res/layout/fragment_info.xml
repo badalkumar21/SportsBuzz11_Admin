@@ -42,24 +42,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Match :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/match"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/match"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                     </LinearLayout>
 
@@ -71,24 +79,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Date :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/date"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -100,24 +115,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Time :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/time"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -129,27 +151,33 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Weather :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/weather"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/weather"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
@@ -179,25 +207,30 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Series :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/series"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
 
+                            <EditText
+                                android:id="@+id/series"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -208,23 +241,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Series Details :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/series_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -236,24 +277,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Duration :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/duration"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/duration"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -284,24 +332,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Venue :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/venue"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/venue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -313,24 +368,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="City :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/city"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        
 
                     </LinearLayout>
 
@@ -342,24 +405,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="Capacity :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/capacity"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/capacity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                     </LinearLayout>
 
@@ -390,24 +461,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="1st Inns :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/avg_score_1st_inns"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/avg_score_1st_inns"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                     </LinearLayout>
 
@@ -419,24 +498,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="2nd Inns :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/avg_score_2nd_inns"
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/avg_score_2nd_inns"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -448,24 +535,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="3rd Inns :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/avg_score_3rd_inns"
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/avg_score_3rd_inns"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
@@ -478,24 +573,33 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
+                            android:layout_gravity="center"
                             android:layout_weight="4"
                             android:gravity="start"
                             android:text="4th Inns :"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/avg_score_4th_inns"
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="top"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="6"
-                            android:gravity="start"
-                            android:text="N/A"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:layout_weight="6">
+
+                            <EditText
+                                android:id="@+id/avg_score_4th_inns"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="N/A"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                     </LinearLayout>
 
