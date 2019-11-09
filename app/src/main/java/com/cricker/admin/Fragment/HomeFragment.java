@@ -81,12 +81,27 @@ public class HomeFragment extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder viewHolder, int i, @NonNull final MyModel model) {
 
+                String urlImg1 = model.getImage1();
+                String urlImg2 = model.getImage2();
+
                 viewHolder.setAds(getActivity().getBaseContext(), model.getAds());
 
                 viewHolder.setTitle(model.getTitle());
-                viewHolder.setDesc(model.getDesc());
-                viewHolder.setImage1(Objects.requireNonNull(getActivity()).getBaseContext(), model.getImage1());
-                viewHolder.setImage2(getActivity().getBaseContext(), model.getImage2());
+
+                viewHolder.setDesc(model.getDesc());if (urlImg1.equals("")){
+                    viewHolder.setImage1Def(getActivity().getBaseContext());
+                }
+                else {
+                    viewHolder.setImage1(getActivity().getBaseContext(), urlImg1);
+                }
+
+                if (urlImg2.equals("")){
+                    viewHolder.setImage2Def(getActivity().getBaseContext());
+                }
+                else {
+                    viewHolder.setImage2(getActivity().getBaseContext(), urlImg2);
+                }
+
                 viewHolder.setT1(model.getT1());
                 viewHolder.setT2(model.getT2());
                 if (model.getUrl() == null) {

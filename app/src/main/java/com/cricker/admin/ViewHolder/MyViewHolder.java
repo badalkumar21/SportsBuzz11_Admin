@@ -65,6 +65,17 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         Picasso.with(ctx).load(image2).resize(100, 100).onlyScaleDown().into(post_image);
     }
 
+    public void setImage1Def(Context ctx) {
+        ImageView post_image = (ImageView) mView.findViewById(R.id.post_image1);
+        Picasso.with(ctx).load(R.drawable.def_icon).resize(100, 100).onlyScaleDown().into(post_image);
+    }
+
+    public void setImage2Def(Context ctx) {
+        ImageView post_image = (ImageView) mView.findViewById(R.id.post_image2);
+        Picasso.with(ctx).load(R.drawable.def_icon).resize(100, 100).onlyScaleDown().into(post_image);
+    }
+
+
     public void setAds(Context ctx, String ads) {
         ImageView adImage = (ImageView) mView.findViewById(R.id.adImage);
         Picasso.with(ctx).load(ads).into(adImage);
