@@ -61,7 +61,6 @@ public class HomeActivity extends AppCompatActivity {
     private ValueAnimator valueAnimator;
     private DrawerLayout drawerLayout;
     private boolean isRunning;
-    private FloatingActionButton actionButtonAddMatch;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -87,15 +86,7 @@ public class HomeActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
 
-        actionButtonAddMatch = findViewById(R.id.add_match);
 
-        actionButtonAddMatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent integer = new Intent(HomeActivity.this, AddMatchActivity.class);
-                startActivity(integer);
-            }
-        });
 
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);

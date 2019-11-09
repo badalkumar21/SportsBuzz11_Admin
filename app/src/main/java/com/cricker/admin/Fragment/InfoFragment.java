@@ -93,20 +93,20 @@ public class InfoFragment extends Fragment {
 
                 ModelInfo modelInfo = infoArrayList.get(0);
 
-                text_avg_score_1st_inns.setText(String.valueOf(modelInfo.getAvg_score_1st_inns()));
-                text_avg_score_2nd_inns.setText(String.valueOf(modelInfo.getAvg_score_2nd_inns()));
-                text_avg_score_3rd_inns.setText(String.valueOf(modelInfo.getAvg_score_3rd_inns()));
-                text_avg_score_4th_inns.setText(String.valueOf(modelInfo.getAvg_score_4th_inns()));
+                    text_avg_score_1st_inns.setText(String.valueOf(modelInfo.getAvg_score_1st_inns()));
+                    text_avg_score_2nd_inns.setText(String.valueOf(modelInfo.getAvg_score_2nd_inns()));
+                    text_avg_score_3rd_inns.setText(String.valueOf(modelInfo.getAvg_score_3rd_inns()));
+                    text_avg_score_4th_inns.setText(String.valueOf(modelInfo.getAvg_score_4th_inns()));
 
-                text_capacity.setText(String.valueOf(modelInfo.getCapacity()));
-                text_city.setText(modelInfo.getCity());
-                text_date.setText(modelInfo.getDate());
-                text_duration.setText(modelInfo.getDuration());
-                text_match.setText(modelInfo.getMatch());
-                text_series.setText(modelInfo.getSeries());
-                text_time.setText(modelInfo.getTime());
-                text_venue.setText(modelInfo.getVenue());
-                text_weather.setText(modelInfo.getWeather());
+                    text_capacity.setText(String.valueOf(modelInfo.getCapacity()));
+                    text_city.setText(modelInfo.getCity());
+                    text_date.setText(modelInfo.getDate());
+                    text_duration.setText(modelInfo.getDuration());
+                    text_match.setText(modelInfo.getMatch());
+                    text_series.setText(modelInfo.getSeries());
+                    text_time.setText(modelInfo.getTime());
+                    text_venue.setText(modelInfo.getVenue());
+                    text_weather.setText(modelInfo.getWeather());
             }
 
             @Override

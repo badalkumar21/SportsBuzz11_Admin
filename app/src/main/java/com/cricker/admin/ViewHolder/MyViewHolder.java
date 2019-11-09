@@ -16,10 +16,16 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     private ClickListener mClickListener;
 
 
+    public TextView text_edit;
+    public TextView text_delete;
+
     public MyViewHolder(final View itemView) {
         super(itemView);
 
         mView = itemView;
+
+        text_edit = itemView.findViewById(R.id.text_edit);
+        text_delete = itemView.findViewById(R.id.text_delete);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

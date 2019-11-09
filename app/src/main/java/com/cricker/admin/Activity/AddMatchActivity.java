@@ -1,6 +1,7 @@
 package com.cricker.admin.Activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,11 +9,15 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cricker.admin.Model.ModelInfo;
+import com.cricker.admin.Model.ModelTips;
+import com.cricker.admin.Model.MyModel;
 import com.cricker.admin.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import static com.cricker.admin.Config.PATH;
@@ -56,6 +61,7 @@ public class AddMatchActivity extends AppCompatActivity {
     DatabaseReference mRefTips;
 
     private String id;
+    private String id_edit;
     long childrenCount = 100;
 
     @Override
@@ -108,7 +114,6 @@ public class AddMatchActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 id = text_id.getText().toString();
                 mRefMatch = mFirebaseDatabase.getReference(PATH + "Cricket");
                 mRefInfo = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id + "/" + "info");
@@ -116,15 +121,15 @@ public class AddMatchActivity extends AppCompatActivity {
 
 
                 //Match
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("title").setValue(text_title.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("desc").setValue(text_desc.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("id").setValue(text_id.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("image1").setValue(text_image1.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("image2").setValue(text_image2.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("t1").setValue(text_team1.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("t2").setValue(text_team2.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("team1").setValue(text_team1.getText().toString());
-                mRefMatch.child(String.valueOf(childrenCount + 1)).child("team2").setValue(text_team2.getText().toString());
+                mRefMatch.child(id).child("title").setValue(text_title.getText().toString());
+                mRefMatch.child(id).child("desc").setValue(text_desc.getText().toString());
+                mRefMatch.child(id).child("id").setValue(text_id.getText().toString());
+                mRefMatch.child(id).child("image1").setValue(text_image1.getText().toString());
+                mRefMatch.child(id).child("image2").setValue(text_image2.getText().toString());
+                mRefMatch.child(id).child("t1").setValue(text_team1.getText().toString());
+                mRefMatch.child(id).child("t2").setValue(text_team2.getText().toString());
+                mRefMatch.child(id).child("team1").setValue(text_team1.getText().toString());
+                mRefMatch.child(id).child("team2").setValue(text_team2.getText().toString());
 
 
                 // Info
@@ -174,6 +179,104 @@ public class AddMatchActivity extends AppCompatActivity {
 
             }
         });
+
+        if (getIntent().getExtras().getInt("key", 0) == 1) {
+
+            Log.d("add_edit_match", "edit: ");
+            id_edit = getIntent().getExtras().getString("id", "");
+
+            if (!(id_edit.equals("") || id_edit.equals(null))) {
+
+                Log.d("add_edit_match", "valid id: " + id_edit);
+
+                mRefMatch = mFirebaseDatabase.getReference(PATH + "Cricket");
+                mRefInfo = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id_edit + "/" + "info");
+                mRefTips = mFirebaseDatabase.getReference(PATH + "FantasySquad/Team" + "/" + id_edit + "/" + "tips");
+
+                Query query = mRefMatch.orderByChild("id").equalTo(id_edit);
+
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            MyModel myModel = snapshot.getValue(MyModel.class);
+
+                            Log.d("add_edit_match", "valid title: " + myModel.getTitle().toString());
+                            text_title.setText(myModel.getTitle().toString());
+                            text_desc.setText(myModel.getDesc().toString());
+                            text_id.setText(myModel.getId().toString());
+                            text_image1.setText(myModel.getImage1().toString());
+                            text_image2.setText(myModel.getImage2().toString());
+                            text_team1.setText(myModel.getTeam1().toString());
+                            text_team2.setText(myModel.getTeam2().toString());
+                            text_team2.setText(myModel.getTeam2().toString());
+                            text_team2.setText(myModel.getTeam2().toString());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                mRefInfo.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            ModelInfo modelInfo = snapshot.getValue(ModelInfo.class);
+
+                            text_avg_score_1st_inns.setText(String.valueOf(modelInfo.getAvg_score_1st_inns()));
+                            text_avg_score_2nd_inns.setText(String.valueOf(modelInfo.getAvg_score_2nd_inns()));
+                            text_avg_score_3rd_inns.setText(String.valueOf(modelInfo.getAvg_score_3rd_inns()));
+                            text_avg_score_4th_inns.setText(String.valueOf(modelInfo.getAvg_score_4th_inns()));
+
+                            text_capacity.setText(String.valueOf(modelInfo.getCapacity()));
+                            text_city.setText(modelInfo.getCity());
+                            text_date.setText(modelInfo.getDate());
+                            text_duration.setText(modelInfo.getDuration());
+                            text_match.setText(modelInfo.getMatch());
+                            text_series.setText(modelInfo.getSeries());
+                            text_time.setText(modelInfo.getTime());
+                            text_venue.setText(modelInfo.getVenue());
+                            text_weather.setText(modelInfo.getWeather());
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                mRefTips.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        EditText[] textViews = {text_tips1, text_tips2, text_tips3, text_tips4, text_tips5, text_tips6, text_tips7};
+                        int c = 0;
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            ModelTips modelTips = snapshot.getValue(ModelTips.class);
+
+                            if (c < 7)
+                                textViews[c].setText(modelTips.getTips().toString());
+                            c++;
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+
+
+        }
 
     }
 }
