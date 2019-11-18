@@ -10,6 +10,7 @@ import android.widget.NumberPicker;
 
 import androidx.fragment.app.Fragment;
 
+import com.cricker.admin.Activity.FantasyTeamMakerActivity;
 import com.cricker.admin.Activity.MatchDetailsActivity;
 import com.cricker.admin.Activity.TeamGeneratorActivity;
 import com.cricker.admin.R;
@@ -66,7 +67,7 @@ public class TeamGeneratorFragment extends Fragment implements NumberPicker.OnVa
             @Override
             public void onClick(View v) {
                 if (generateButton.isActivated()) {
-                    Intent intent = new Intent(getActivity(), TeamGeneratorActivity.class);
+                    Intent intent = new Intent(getActivity(), FantasyTeamMakerActivity.class);
                     intent.putExtra("team1", team1);
                     intent.putExtra("team2", team2);
                     intent.putExtra("wk", numberPickerWk.getValue());

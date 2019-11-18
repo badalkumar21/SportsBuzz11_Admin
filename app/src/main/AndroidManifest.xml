@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-      <activity android:name=".Activity.MatchDetailsActivity" />
+        <activity android:name=".Activity.FantasyTeamMakerActivity"></activity>
+        <activity android:name=".Activity.MatchDetailsActivity" />
         <activity android:name=".Activity.TeamConbinationActivity" />
         <activity android:name=".Activity.TeamGeneratorActivity" />
         <activity android:name=".Activity.WebViewActivity" />

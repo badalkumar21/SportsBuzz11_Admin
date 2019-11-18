@@ -61,7 +61,7 @@ public class TeamConbinationActivity extends AppCompatActivity implements Number
         generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TeamConbinationActivity.this, TeamGeneratorActivity.class);
+                Intent intent = new Intent(TeamConbinationActivity.this, FantasyTeamMakerActivity.class);
                 intent.putExtra("id", id);
                 intent.putExtra("team1", team1);
                 intent.putExtra("team2", team2);

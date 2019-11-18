@@ -2,6 +2,7 @@ package com.cricker.admin.ViewHolder;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,28 +15,29 @@ public class ViewHolderFantasyXI extends RecyclerView.ViewHolder {
 
     View mView;
     private ClickListener mClickListener;
-
+    public CheckBox checkBox;
 
     public ViewHolderFantasyXI(final View itemView) {
         super(itemView);
 
         mView = itemView;
-
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mClickListener.onItemClick(v, getAdapterPosition());
-            }
-        });
-
-        itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-
-                mClickListener.onItemLongClick(v, getAdapterPosition());
-                return true;
-            }
-        });
+        checkBox = itemView.findViewById(R.id.checkBox);
+//
+//        itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mClickListener.onItemClick(v, getAdapterPosition());
+//            }
+//        });
+//
+//        itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//
+//                mClickListener.onItemLongClick(v, getAdapterPosition());
+//                return true;
+//            }
+//        });
 
     }
 
